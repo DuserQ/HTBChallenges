@@ -12,6 +12,6 @@ In this challenge we're provided with a protected zip folder(which passoword is 
 
 that contains 4 files:
 * `server.py`: the script that runs when whe connect to the instace
-* ``
-* ``
+* `_account.py`: show how the user are created
+* `_annex`
 * ``
