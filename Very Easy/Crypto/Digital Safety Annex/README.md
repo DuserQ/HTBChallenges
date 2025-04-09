@@ -95,3 +95,38 @@ elif user_inp == '2':
             else:
                 print("[!] Message could not be verified! Please make sure your signature and messages are correct!")
 ```
+`3`, in base on the username registered you can download the secret messages that you stored in the program
+```python
+ elif user_inp == '3':
+            uname = input("\nPlease enter the username that stored the message: ")
+            if not uname in annex.vault:
+                print("\n[!] Sorry, need valid existing username to download secret!")
+                continue
+
+            req_id = input("\nPlease enter the message's request id: ")
+            if not req_id.isdigit() or not (0 <= int(req_id) < len(annex.vault[uname])):
+                print("\n[!] Sorry, need valid request id to download secret!")
+                continue
+            
+            req_id = int(req_id)
+            if uname == account_username:
+                account = annex.users[account_username]
+
+                if account.login():
+                    h, msg, sig = annex.vault[uname][req_id]
+                    print(f"\n[+] Here is your message: {msg}")
+                else:
+                    print("[-] Invalid username and/or password!")
+            else:
+                k = input_number("\nPlease enter the message's nonce value: ")
+                if not k:
+                    print("\n[!] Sorry, need a valid nonce to download secret!")
+                    continue
+            
+                x = input_number("\n[+] Please enter the private key: ")
+                if not x:
+                    print("\n[!] Sorry, need a valid private key to download secret!")
+                    continue
+
+                annex.download(x, k, req_id, uname)
+```
