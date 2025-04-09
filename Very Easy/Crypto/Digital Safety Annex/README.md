@@ -17,7 +17,7 @@ that contains 4 files:
 * `_dsa.py`: provides the digital signatures for the messages that you store in the program
 
 ## Source Code Analysis
-the program starting stored some messages 
+the program starting calling the class `Annex()` reassigned to a var called `annex` and stored some messages 
 ```python
 def main():
     annex = Annex()
