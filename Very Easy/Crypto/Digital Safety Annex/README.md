@@ -46,4 +46,3 @@ We will keep your data safe so you don't have to worry!
 [5] Exit
 
 [+] Option > """)
-``
