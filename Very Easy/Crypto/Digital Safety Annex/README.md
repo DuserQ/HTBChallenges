@@ -8,7 +8,6 @@ Here at D.S.A we store all your super secret information in a secure vault until
 ## Enumeration
 In this challenge we're provided with a protected zip folder(which passoword is below the download buttom as you can see in the image) 
 
-
 ![Alt text](https://github.com/user-attachments/assets/2ce8e77e-3b98-4fff-9323-ce947876be45)
 
 that contains 4 files:
