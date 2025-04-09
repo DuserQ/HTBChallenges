@@ -59,7 +59,7 @@ if user_inp == '0':
 ```
 option `1` for store a message and then is sign by the `annex` class, later the message's signature generated is later display in screen
 ```python
-        elif user_inp == '1':
+elif user_inp == '1':
             if not account_username:
                 print("\n[!] You need to create an account with the Annex first before you can store any secrets!")
             else:
