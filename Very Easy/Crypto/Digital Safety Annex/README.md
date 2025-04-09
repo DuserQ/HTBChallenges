@@ -46,3 +46,9 @@ We will keep your data safe so you don't have to worry!
 [5] Exit
 
 [+] Option > """)
+```
+we see that the numbers from 0 to 5 are the range of functions that have the program that are to `user_inp` like is show below
+```python
+while True:
+        user_inp = show_menu()
+```
