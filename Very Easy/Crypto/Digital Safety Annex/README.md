@@ -17,7 +17,7 @@ that contains 4 files:
 * `_dsa.py`: provides the digital signatures for the messages that you store in the program
 
 ## Source Code Analysis
-the program start preload some messages and stored them
+the program starting stored some messages 
 ```python
 def main():
     annex = Annex()
@@ -30,3 +30,21 @@ def main():
     annex.sign("ElGamalSux", "To prove it, I'm going to upload my most precious item! No one but me will be able to get it!", HTB_PASSWD)
     annex.sign("ElGamalSux", FLAG, HTB_PASSWD)
 ```
+then starting printing the menu
+
+```python
+def show_menu():
+    return input("""
+Welcome to the Digital Safety Annex!
+We will keep your data safe so you don't have to worry!
+
+[0] Create Account 
+[1] Store Secret
+[2] Verify Secret
+[3] Download Secret
+[4] Developer Note
+[5] Exit
+
+[+] Option > """)
+
+``
