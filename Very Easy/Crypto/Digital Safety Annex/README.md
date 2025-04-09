@@ -13,5 +13,7 @@ In this challenge we're provided with a protected zip folder(which password is b
 that contains 4 files:
 * `server.py`: the script that runs when whe connect to the instace
 * `_account.py`: show how the user are created
-* `_annex`
-* ``
+* `_annex`: source class for all the processes in the server 
+* `_dsa.py`: provides the digital signatures for the messages that you store in the program
+
+
