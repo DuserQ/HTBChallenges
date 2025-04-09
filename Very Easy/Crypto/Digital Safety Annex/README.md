@@ -16,4 +16,17 @@ that contains 4 files:
 * `_annex`: source class for all the processes in the server 
 * `_dsa.py`: provides the digital signatures for the messages that you store in the program
 
-
+## Source Code Analysis
+the program start preload some messages and stored them
+```python
+def main():
+    annex = Annex()
+    annex.create_account("Admin", "5up3r_53cur3_P45sw0r6")
+    annex.create_account("ElGamalSux", HTB_PASSWD)
+    annex.sign("ElGamalSux", "DSA is a way better algorithm", HTB_PASSWD)
+    annex.sign("Admin", "Testing signing feature", "5up3r_53cur3_P45sw0r6")
+    annex.sign("ElGamalSux", "I doubt anyone could beat it", HTB_PASSWD)
+    annex.sign("Admin", "I should display the user log and make sure its working", "5up3r_53cur3_P45sw0r6")
+    annex.sign("ElGamalSux", "To prove it, I'm going to upload my most precious item! No one but me will be able to get it!", HTB_PASSWD)
+    annex.sign("ElGamalSux", FLAG, HTB_PASSWD)
+```
