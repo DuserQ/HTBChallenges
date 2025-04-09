@@ -3,4 +3,13 @@
 ## Challenge Description
 Here at D.S.A we store all your super secret information in a secure vault until you provide us with proof you are who you say you are. We even use SHA256 instead of the weak SHA1! We are so confident, we invite all who wish to show us otherwise!
 
-* `server.py`:
+
+
+## Enumeration
+In this challenge we're provided with a protected zip folder(which passoword is below the download buttom as you can see in the image) 
+![image](https://github.com/user-attachments/assets/2ce8e77e-3b98-4fff-9323-ce947876be45)
+that contains 4 files:
+* `server.py`: the script that runs when whe connect to the instace
+* ``
+* ``
+* ``
