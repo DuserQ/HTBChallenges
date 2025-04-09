@@ -13,11 +13,11 @@ In this challenge we're provided with a protected zip folder(which password is b
 that contains 4 files:
 * `server.py`: the script that runs when whe connect to the instace
 * `_account.py`: show how the user are created
-* `_annex`: source class for all the processes in the server 
+* `_annex.py`: source class for all the processes in the server 
 * `_dsa.py`: provides the digital signatures for the messages that you store in the program
 
 ## Source Code Analysis
-the program starting calling the class `Annex()` reassigned to a var called `annex` and stored some messages 
+the program starting calling the class `Annex()` (that is store in the `_annex.py` file)  reassigned to a var called `annex` and stored some messages 
 ```python
 def main():
     annex = Annex()
@@ -51,4 +51,25 @@ we see that the numbers from 0 to 5 are the range of functions that have the pro
 ```python
 while True:
         user_inp = show_menu()
+```
+option `0` is to create a user
+```python
+if user_inp == '0':
+            account_username = annex.create_account()
+```
+option `1` for store a message and then is sign by the `annex` class, later the message's signature generated is later display in screen
+```python
+  elif user_inp == '1':
+            if not account_username:
+                print("\n[!] You need to create an account with the Annex first before you can store any secrets!")
+            else:
+                while True:
+                    message = input("\nPlease enter you super secret message: ")
+                    r, s = annex.sign(account_username, message)
+
+                    if r > 0 and s > 0:
+                        break
+
+                print(f"\n[+] Here is your signature (r, s): ({r}, {s})")
+                print("Keep your signature safe!!")
 ```
