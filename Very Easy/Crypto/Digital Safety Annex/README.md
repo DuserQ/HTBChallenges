@@ -73,3 +73,25 @@ option `1` for store a message and then is sign by the `annex` class, later the 
                 print(f"\n[+] Here is your signature (r, s): ({r}, {s})")
                 print("Keep your signature safe!!")
 ```
+`2`, verify the signature belongs to a supouse message or a stored message
+```python
+elif user_inp == '2':
+            signature = input("\nPlease enter the signature (r,s) separated by a comma: ")
+            signature = re.search(r'^(\d+),(\d+)$', signature)
+
+            if not signature:
+                print("\n[!] Sorry, need a valid signature to verify message!")
+                continue
+            
+            message = input("\nPlease enter the message you wish to verify: ").strip()
+            if not message:
+                print("\n[!] Sorry, need a valid message to continue verification!")
+                continue
+
+            signature = (int(signature.group(1)), int(signature.group(2)))
+
+            if annex.verify(message, signature):
+                print("[+] Message has been successfully verified!")
+            else:
+                print("[!] Message could not be verified! Please make sure your signature and messages are correct!")
+```
