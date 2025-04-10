@@ -169,3 +169,28 @@ We will keep your data safe so you don't have to worry!
 
 [+] Option > 
 ```
+as we know, some messages were store as thirst parameters of the program. between them the flag's one:
+```python
+annex.sign("ElGamalSux", FLAG, HTB_PASSWD)
+```
+so, we need find a way to retraive this flag, if you can see there's a calling to the class `Annex`, specifically the function `sign`.
+that give us some clues about how to solve, lets take a look to this function in the `_annex.py` file.
+```python
+def sign(self, username, message, password=""):
+        account = self.users[username]
+        
+        if not account.login(password):
+            print("[!] Invalid Password!\n")
+            return (0, 0)
+
+        msg = message.encode()
+        h = sha256(msg).hexdigest()
+        
+        r, s = self.dsa.sign(h, account.k_max)
+        
+        self.log_info(account, msg, h, (r, s))
+        
+        return (r, s)
+```
+
+
