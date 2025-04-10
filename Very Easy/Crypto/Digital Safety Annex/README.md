@@ -4,7 +4,6 @@
 Here at D.S.A we store all your super secret information in a secure vault until you provide us with proof you are who you say you are. We even use SHA256 instead of the weak SHA1! We are so confident, we invite all who wish to show us otherwise!
 
 
-
 ## Enumeration
 In this challenge we're provided with a protected zip folder(which password is below the download buttom as you can see in the image) 
 
@@ -154,4 +153,19 @@ elif user_inp == '2':
             print("[!] Invalid option.")
 ```
 ## Solution
+lets start connecting to the instance
+```bash
+📦[Dagon@fedora ~]$ nc 94.237.63.16 34051
 
+Welcome to the Digital Safety Annex!
+We will keep your data safe so you don't have to worry!
+
+[0] Create Account 
+[1] Store Secret
+[2] Verify Secret
+[3] Download Secret
+[4] Developer Note
+[5] Exit
+
+[+] Option > 
+```
