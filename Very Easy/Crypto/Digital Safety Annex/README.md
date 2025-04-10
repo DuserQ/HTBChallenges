@@ -249,3 +249,13 @@ before:
 * `k` value
 * `x` value
 * `request id` of the message
+
+knowing that the signature system that program used is DSA, investigate a little bit we found that in the `_dsa.py`file in the function `sign` show us the process to obtein
+the r and s signatures values
+```python
+ def sign(self, h, k_max):
+        k = random.randint(self.k_min, k_max)
+        r = pow(self.g, k, self.p) % self.q
+        s = (pow(k, -1, self.q) * (int(h, 16) + self.x * r)) % self.q
+        return (r, s)
+```
