@@ -211,4 +211,6 @@ but if we had take notice about the option menu in `server.py`, the 4rd option h
                 if annex.users['Admin'].login():
                     print(f'\n{annex.user_log}')
 ```
+knowing this we need to know what print when this condition happens, let get back to the program:
+
 
