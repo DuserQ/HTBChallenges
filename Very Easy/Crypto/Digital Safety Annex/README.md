@@ -192,5 +192,23 @@ def sign(self, username, message, password=""):
         
         return (r, s)
 ```
-
+all the messages that was sending are storing in the function `log_info`
+```python
+    def log_info(self, account, msg, h, sig):
+        _id = account.stored_msgs
+        if account.username not in self.vault:
+            self.vault[account.username] = []
+        
+        self.vault[account.username].append((h, msg, (str(sig[0]), str(sig[1]))))
+        self.user_log.append((sig, h))
+        account.stored_msgs += 1
+```
+Bingo!, we can see the structured where are all saved. but we still have a problem and its to see all this encoded messages.
+but if we had take notice about the option menu in `server.py`, the 4rd option has a peculiar syntax, and its after the notes of the devs:
+```python
+ inp = input("[+] Test user log (y/n): ").lower()
+            if inp == 'y':
+                if annex.users['Admin'].login():
+                    print(f'\n{annex.user_log}')
+```
 
