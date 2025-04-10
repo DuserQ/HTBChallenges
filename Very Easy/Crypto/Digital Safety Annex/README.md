@@ -155,7 +155,7 @@ elif user_inp == '2':
 ## Solution
 lets start connecting to the instance
 ```bash
-📦[Dagon@fedora ~]$ nc 94.237.63.16 34051
+$ nc 94.237.63.16 34051
 
 Welcome to the Digital Safety Annex!
 We will keep your data safe so you don't have to worry!
