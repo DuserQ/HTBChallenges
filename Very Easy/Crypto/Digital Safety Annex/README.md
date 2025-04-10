@@ -244,4 +244,8 @@ Enter your password : 5up3r_53cur3_P45sw0r6
 Eureka!, we found the stored messages. we are on track. the last thing to do is to find the steps that get throught to output this.
 
 ## Explotation
-
+knowing all these information the only way to retraive the messages is using the option 3 in he menu. but we required some information about the mesage
+before:
+*k value
+*x value
+*message id
