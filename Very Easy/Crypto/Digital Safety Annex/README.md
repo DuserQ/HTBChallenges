@@ -246,6 +246,6 @@ Eureka!, we found the stored messages. we are on track. the last thing to do is 
 ## Explotation
 knowing all these information the only way to retraive the messages is using the option 3 in he menu. but we required some information about the mesage
 before:
-* k value
-* x value
-* message id
+* `k` value
+* `x` value
+* `request id` of the message
