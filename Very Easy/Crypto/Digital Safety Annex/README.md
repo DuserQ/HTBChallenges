@@ -130,3 +130,28 @@ elif user_inp == '2':
 
                 annex.download(x, k, req_id, uname)
 ```
+`4`, a some notes that the developers leave for the people trying to break his system (not humble for them)
+```python
+ elif user_inp == '4':
+            print("\nWe are here to prove that DSA is waaayyyy better than El Gamal!\nWe also modified our signature algorithm to use the super secure SHA-256. No way you can bypass our authentication. If you must try, be sure to bring tissues for your tears of failure.\nI'll throw you a bone, these are public record anyway:\n")
+
+            p, q, g = annex.dsa.get_public_params()
+
+            print(f'{p = }')
+            print(f'{q = }')
+            print(f'{g = }')
+
+            inp = input("[+] Test user log (y/n): ").lower()
+            if inp == 'y':
+                if annex.users['Admin'].login():
+                    print(f'\n{annex.user_log}')
+        
+        elif user_inp == '5':
+            print("[!] Leaving the Annex. Thanks for choosing DSA!")
+            break
+        
+        else:
+            print("[!] Invalid option.")
+```
+## Solution
+
