@@ -340,4 +340,30 @@ print(s)
 if (s_old== s):
     print("son iguales, coronastes :D")
 ```
-the only value that we need is `req_id` so we need to guessing what is the id of this message. but
+the only value that we need is `req_id` so we need to guessing what is the id of this message. but we have a few hints to find this.
+we see in `_account.py` that a var called `self.stored_msgs` equals 0 and when any message is sign this counter auments in +1 as you can see
+in the class `annex` with func `log_info` so if we have 4 messages, the req_id goes from 0 to 3 and the last one is the id of the FLAG.
+with all of these information we can solve the challenge
+```bash
+Welcome to the Digital Safety Annex!
+We will keep your data safe so you don't have to worry!
+
+[0] Create Account 
+[1] Store Secret
+[2] Verify Secret
+[3] Download Secret
+[4] Developer Note
+[5] Exit
+
+[+] Option > 3
+
+Please enter the username that stored the message: ElGamalSux
+
+Please enter the message's request id: 3
+
+Please enter the message's nonce value: 832969                                                            
+
+[+] Please enter the private key: 12863695919386633915288268823678129743107914057201463213192319227153
+[+] Here is your super secret message: b'HTB{1_Gu3ss_d54_15_N07_4s_s3CuR3_A5_1_7h0u647}'
+```
+
