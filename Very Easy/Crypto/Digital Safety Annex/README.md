@@ -261,4 +261,27 @@ the r and s signatures values
 ```
 we see that the var used to get `r` and `s` were `k` and `x`. so in that case we need to retreive them, the values that we know are `r`, `s` and `h`
 but remember the hint that through the developers, this is the `g`,`p` and `q` values that was needed to generate the signatures.
-but still not get it the `k`, we can try using brute force to get the nonce (is `k`). this value is choosed randomly its a value between `k_min` and `k_max`
+but still not get it the `k`, we can try using brute force to get the nonce (is `k`). this value is choosed randomly its a value between `k_min` and `k_max` 
+
+`k_min` is defined in `_dsa.py` file in the function `__init__`
+```python
+    def __init__(self, key_size=2048):
+        key = PrimeGenerator.generate(key_size)
+        self.p, self.q = key.p, key.q
+        self.x, self.y, self.g = self.generate_keys()
+        self.k_min = 65500
+```
+and the `k_max` we can search it in the `_account.py` file, exactli in the func `__init__`too.
+```python
+    def __init__(self, username="default-user", passwd=""):
+        self.username = username
+        self.password = sha256(passwd.encode()).digest()
+        self.k_max = int(len(self.username) ** 6)
+        if self.k_max < 65536:
+            self.k_max += 1000000
+        self.stored_msgs = 0
+```
+in this case the username is `ElGamalSux` because is the username that stores the FLAG message
+```python
+annex.sign("ElGamalSux", FLAG, HTB_PASSWD)
+``
