@@ -314,3 +314,30 @@ if found_k is not None:
 else:
     print(f"No se encontró ningún k en el rango que cumpla r = {target_r}")
 ```
+later for obtain our `nonce` then we can find the `private key`(is the x), because the `k` was needed to calcule the `s` signature
+```python
+def find_x(s, k, h_hex, r, q):
+    h = int(h_hex, 16)
+    k_s = k * s
+    numerator = (k_s - h) % q
+    r_inv = pow(r, -1, q)
+    x = (numerator * r_inv) % q
+    return x
+
+# Example values (replace with your actual values)
+q = 20519229739599041555407320433119797781635340775675043194826066539273  # The prime modulus
+s_old = 6007356330493383757237844540166383085453621895536165182810958631364  # The signature s component
+k = 256267    # The ephemeral key
+h = 'e20824d197269d9df0949caf37c7df2676ffc9e6b26bf3fd6e34bcb872651445' # The hash as hex string
+r = 4559594737218422332478833505880630464105233638196418246696677103439    # The signature r component
+
+x = find_x(s_old, k, h, r, q)
+print("esta es tu x:",x)
+
+s = (pow(k, -1, q) * (int(h, 16) + x * r)) % q
+print(s)
+
+if (s_old== s):
+    print("son iguales, coronastes :D")
+```
+the only value that we need is `req_id` so we need to guessing what is the id of this message. but
