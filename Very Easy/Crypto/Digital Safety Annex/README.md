@@ -259,3 +259,4 @@ the r and s signatures values
         s = (pow(k, -1, self.q) * (int(h, 16) + self.x * r)) % self.q
         return (r, s)
 ```
+we see that the var used to get `r` and `s` were `k` and `x`
