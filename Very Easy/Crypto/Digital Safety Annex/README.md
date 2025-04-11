@@ -259,4 +259,6 @@ the r and s signatures values
         s = (pow(k, -1, self.q) * (int(h, 16) + self.x * r)) % self.q
         return (r, s)
 ```
-we see that the var used to get `r` and `s` were `k` and `x`
+we see that the var used to get `r` and `s` were `k` and `x`. so in that case we need to retreive them, the values that we know are `r`, `s` and `h`
+but remember the hint that through the developers, this is the `g`,`p` and `q` values that was needed to generate the signatures.
+but still not get it the `k`, we can try using brute force to get the nonce (is `k`). this value is choosed randomly its a value between `k_min` and `k_max`
