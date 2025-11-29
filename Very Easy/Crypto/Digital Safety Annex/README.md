@@ -8,8 +8,8 @@ Here at D.S.A we store all your super secret information in a secure vault until
 In this challenge we're provided with a protected zip folder(which password is below the download buttom as you can see in the image) 
 
 ![Alt text](https://github.com/user-attachments/assets/2ce8e77e-3b98-4fff-9323-ce947876be45)
+![Alt text](https://media.tenor.com/ue89mAwwFVsAAAAi/nub-nub-cat.gif)
 
-![Alt text](<div class="tenor-gif-embed" data-postid="13397995139699316059" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/nub-nub-cat-silly-silly-cat-cute-gif-13397995139699316059">Nub Nub Cat Sticker</a>from <a href="https://tenor.com/search/nub-stickers">Nub Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>)
 that contains 4 files:
 * `server.py`: the script that runs when whe connect to the instace
 * `_account.py`: show how the user are created
