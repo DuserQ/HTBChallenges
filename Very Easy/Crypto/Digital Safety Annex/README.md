@@ -8,7 +8,7 @@ Here at D.S.A we store all your super secret information in a secure vault until
 In this challenge we're provided with a protected zip folder(which password is below the download buttom as you can see in the image) 
 
 ![Alt text](https://github.com/user-attachments/assets/2ce8e77e-3b98-4fff-9323-ce947876be45)
-
+![Alt text](https://tenor.com/p7S7FWZh5D5.gif)
 that contains 4 files:
 * `server.py`: the script that runs when whe connect to the instace
 * `_account.py`: show how the user are created
@@ -18,7 +18,7 @@ that contains 4 files:
 ## Source Code Analysis
 the program starting calling the class `Annex()` (that is store in the `_annex.py` file)  reassigned to a var called `annex` and stored some messages 
 ```python
-def main():
+def main(): 
     annex = Annex()
     annex.create_account("Admin", "5up3r_53cur3_P45sw0r6")
     annex.create_account("ElGamalSux", HTB_PASSWD)
