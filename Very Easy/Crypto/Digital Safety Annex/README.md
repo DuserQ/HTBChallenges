@@ -8,7 +8,7 @@ Here at D.S.A we store all your super secret information in a secure vault until
 In this challenge we're provided with a protected zip folder(which password is below the download buttom as you can see in the image) 
 
 ![Alt text](https://github.com/user-attachments/assets/2ce8e77e-3b98-4fff-9323-ce947876be45)
-![Alt text](https://media.tenor.com/ue89mAwwFVsAAAAi/nub-nub-cat.gif)
+
 
 that contains 4 files:
 * `server.py`: the script that runs when whe connect to the instace
